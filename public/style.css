@@ -1,0 +1,90 @@
+canvas {
+    border: 1px black solid;
+}
+
+button {
+    cursor: pointer;
+    width: 250px;
+    margin-top: 40px;
+    height: 30px;
+    border: 2px solid red;
+    font-size: 15px;
+    background: none;
+}
+
+input {
+    border: 2px solid black;
+}
+
+* {
+    font-family: "Josefin Sans", sans-serif;
+}
+
+::placeholder {
+    color: black;
+    font-size: 20px;
+}
+.registerForm {
+    display: inline-block;
+}
+
+.registerButton {
+    width: 250px;
+    margin-top: 40px;
+    height: 30px;
+    border: 2px solid red;
+    font-size: 15px;
+    background: none;
+}
+
+body {
+    margin: 0;
+}
+
+input {
+    color: black;
+    font-size: 20px;
+    border: none;
+    border-bottom: 2px solid red;
+    background: none;
+    width: 250px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    background-image: url("noun_Lion_202415.png");
+    background-repeat: no-repeat;
+    background-position: 20px 20px;
+    padding-left: 100px;
+}
+
+input:focus {
+    border: 3px dashed black;
+}
+
+placeholder {
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.bg-container {
+    width: 100%;
+    height: 700px;
+    border: 1px solid #000;
+    position: relative;
+}
+.bg-container .content {
+    position: absolute;
+    z-index: 999;
+    /* text-align: center; */
+    width: 100%;
+}
+.bg-container::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background-image: url("wwf-zebra.jpg");
+    background-size: cover;
+    opacity: 0.7;
+}

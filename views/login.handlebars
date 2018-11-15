@@ -1,0 +1,12 @@
+<h1>Please Log In To Continue</h1>
+
+<form method="post">
+    Email : <input type="text" name="email" placeholder="Email Address">
+    Password : <input type="password" name="pass" placeholder="Password">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <button type="submit" name="button">Submit</button>
+</form>
+
+{{#if error}}
+<p class="error">Your email or password are incorrect, please try again</p>
+{{/if}}

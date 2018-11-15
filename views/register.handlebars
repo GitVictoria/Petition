@@ -1,0 +1,46 @@
+
+
+
+<div class="registerForm">
+
+<h1>Please Register Here</h1>
+
+<form class="register" method="post">
+    <div >
+         <input type="text" name="first" placeholder="First Name">
+    </div>
+     <input type="text" name="last" placeholder="Last Name">
+    <div >
+<div >
+     <input type="text" name="email" placeholder="Email">
+
+</div>
+<div>
+     <input type="password" name="pass" placeholder="Password">
+</div>
+<div >
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+</div>
+<div>
+    <button class="registerButton" type="submit" name="button">Submit</button>
+
+</div>
+    </div>
+
+</form>
+</div>
+<br>
+<br>
+<br>
+<br>
+<center>
+<form method="post">
+    Already a mebmer?<br>
+    Please click here to log back in:<br>
+    <a href="/login">
+   <button type="button" value="Log in">Log In</button>
+</a>
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+</form>
+</center>

@@ -1,0 +1,27 @@
+<h1>Changed your mind?</h1>
+<br>
+<br>
+<h2>You can delete your signature bellow</h2>
+<form method="post">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <a href="/delete/sig">
+   <input type="button" value="Delete Signature" />
+</a>
+</form>
+
+<br>
+<br>
+<br>
+
+<h1>If for some unknown silly reasons you'd like to delete your profile,<br>
+please click the button bellow</h1>
+<br>
+<br>
+<br>
+
+<form method="post">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <a href="/delete/profile">
+   <input type="button" value="Delete Profile" />
+</a>
+</form>
