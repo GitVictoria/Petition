@@ -1,9 +1,10 @@
-const secrets = require("./secrets");
+// const secrets = require("./secrets");
 const ca = require("chalk-animation");
 const express = require("express");
 const app = express();
 const csurf = require("csurf");
 const bcrypt = require("./bcrypt");
+// const redis = require("/.redis");
 
 const db = require("./db");
 var cookieSession = require("cookie-session");
@@ -266,6 +267,18 @@ app.get("/logout", function(req, res) {
 app.get("/signers/:city", (req, res) => {
     // click on the city and see all signed people from that city
 });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 app.listen(process.env.PORT || 8080, () =>
     ca.rainbow("I am ready to go, Victoria!")
