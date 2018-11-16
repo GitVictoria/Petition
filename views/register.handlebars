@@ -3,7 +3,7 @@
 
 <div class="registerForm">
 
-<h1>Please Register Here</h1>
+<h1 class="registerType">Please Register Here</h1>
 
 <form class="register" method="post">
     <div >
@@ -25,22 +25,33 @@
     <button class="registerButton" type="submit" name="button">Submit</button>
 
 </div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="/script.js" type="text/javascript">
+
+</script>
+
     </div>
 
 </form>
 </div>
-<br>
-<br>
-<br>
-<br>
-<center>
-<form method="post">
-    Already a mebmer?<br>
-    Please click here to log back in:<br>
-    <a href="/login">
-   <button type="button" value="Log in">Log In</button>
-</a>
-        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+<div class="typeform">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="style.css" type="text/css" />
+<h1>Real Fur In Fashion is
+  <span
+     class="txt-rotate"
+     data-period="2000"
+     data-rotate='[ "distasteful.", "sadistic.", "revolting.", "heartless.", "tacky", "barbaric.", "repulsive." ]'></span>
+ </h1>
+</div>
+<div>
 
-</form>
-</center>
+    <form class="logIn" method="post"><br><br>
+        <p class="registerLogIn">Already a mebmer?</p>
+        <a href="/login">
+       <button type="button" value="Log in">Log In</button>
+    </a>
+            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+    </form>
+
+</div>

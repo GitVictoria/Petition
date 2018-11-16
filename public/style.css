@@ -1,5 +1,7 @@
 canvas {
     border: 1px black solid;
+    background-color: white;
+    opacity: 0.8;
 }
 
 button {
@@ -20,6 +22,12 @@ input {
     font-family: "Josefin Sans", sans-serif;
 }
 
+.typeform {
+    float: right;
+    padding-right: 100px;
+    padding-top: 200px;
+}
+
 ::placeholder {
     color: black;
     font-size: 20px;
@@ -32,9 +40,28 @@ input {
     width: 250px;
     margin-top: 40px;
     height: 30px;
-    border: 2px solid red;
+    border: 2px solid black;
     font-size: 15px;
     background: none;
+}
+
+.registerLogIn {
+    padding-left: 50px;
+}
+
+.logIn {
+    padding-left: 70px;
+}
+
+.registerType {
+    padding-left: 70px;
+    cursor: pointer;
+    font-size: 40px;
+}
+
+.register {
+    padding-left: 70px;
+    display: none;
 }
 
 body {
@@ -45,12 +72,12 @@ input {
     color: black;
     font-size: 20px;
     border: none;
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid black;
     background: none;
     width: 250px;
-    padding-top: 40px;
-    padding-bottom: 20px;
-    background-image: url("noun_Lion_202415.png");
+    padding-top: 30px;
+    padding-bottom: 10px;
+    background-image: url("noun_Fox_516455.png");
     background-repeat: no-repeat;
     background-position: 20px 20px;
     padding-left: 100px;
@@ -66,14 +93,13 @@ placeholder {
 
 .bg-container {
     width: 100%;
-    height: 700px;
+    height: 750px;
     border: 1px solid #000;
     position: relative;
 }
 .bg-container .content {
     position: absolute;
     z-index: 999;
-    /* text-align: center; */
     width: 100%;
 }
 .bg-container::after {
@@ -84,7 +110,7 @@ placeholder {
     width: 100%;
     height: 100%;
     z-index: 99;
-    background-image: url("wwf-zebra.jpg");
+    background-image: url("backdrop.png");
     background-size: cover;
     opacity: 0.7;
 }
