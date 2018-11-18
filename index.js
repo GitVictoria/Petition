@@ -39,7 +39,26 @@ app.use(function(req, res, next) {
     next();
 });
 
+// app.use(function(req, res, next) {
+//     if (!req.session.user_id && req.url != "/register" && req.url != "/login")
+//     {
 //
+//     }
+// })
+
+// app.get("/login", requireLoggedOutUser, (req,res)
+//  => {
+//
+//  });
+
+//  function requireLoggedOutUser (req, res, next {
+//      if (req.session.user_id) {
+//          res.redirect("/petition")
+//      } else {
+//          next()
+//      }
+//  })
+// //
 //
 //
 //
@@ -156,15 +175,23 @@ app.get("/delete", (req, res) => {
     });
 });
 
-app.post("/delete/sig", (req, res) => {
-    db.deleteSig(req.session_user_id).then(function(req, res) {
-        req.session.sigId = null;
-        res.redirect("/register");
-    });
+app.get("/delete/sig", (req, res) => {
+    db.deleteSig(req.session.user_id)
+        .then(function() {
+            req.session.sigId = null;
+            res.redirect("/register");
+        })
+        .catch(err => {
+            console.log(err);
+        });
 });
 
-app.post("/delete/profile", (req, res) => {
+app.get("/delete/profile", (req, res) => {
     db.deleteProfile(req.session.user_id);
+    res.redirect("/register");
+});
+
+app.post("/delete", (req, res) => {
     res.redirect("/register");
 });
 
@@ -187,7 +214,7 @@ app.post("/profile/edit", (req, res) => {
                         hash
                     )
                     .then(function(results) {
-                        res.redirect("/signers");
+                        res.redirect("/thanks");
                     })
             )
             .catch(err => {
@@ -196,7 +223,7 @@ app.post("/profile/edit", (req, res) => {
     } else {
         db.updateUsersNoPass(req.body.first, req.body.last, req.body.email)
             .then(function(results) {
-                res.redirect("/signers");
+                res.redirect("/thanks");
             })
             .catch(err => {
                 console.log(err);
@@ -265,20 +292,13 @@ app.get("/logout", function(req, res) {
 });
 
 app.get("/signers/:city", (req, res) => {
-    // click on the city and see all signed people from that city
+    db.getCitySigners(req.params.city).then(signers => {
+        res.render("cities", {
+            layout: "main",
+            results: signers.rows
+        });
+    });
 });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 app.listen(process.env.PORT || 8080, () =>
     ca.rainbow("I am ready to go, Victoria!")

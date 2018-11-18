@@ -1,7 +1,9 @@
-<h1>People who have signed this petition</h1>
 
+<center>
+    <h1>People who have signed this petition</h1>
 {{#each results}}
 <ul>
-    <li><p>{{first }}{{last }}{{city}}{{age}}{{url}}</p>
+    <p>{{first }}  {{ last }}  <a href="/signers/{{city}}">{{city}}</a>  {{ age }}</p>
 </ul>
 {{/each}}
+</center>

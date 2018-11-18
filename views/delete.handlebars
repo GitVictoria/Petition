@@ -1,11 +1,17 @@
+<center>
 <h1>Changed your mind?</h1>
+<h3>We are sad to see you go</h3>
+
+<div class="">
+
+</div>
 <br>
 <br>
-<h2>You can delete your signature bellow</h2>
+<h2>Delete your signature</h2>
 <form method="post">
     <input type="hidden" name="_csrf" value="{{csrfToken}}">
     <a href="/delete/sig">
-   <input type="button" value="Delete Signature" />
+   <button type="sumbit" name="button">Delete Your Signature</button>
 </a>
 </form>
 
@@ -13,15 +19,13 @@
 <br>
 <br>
 
-<h1>If for some unknown silly reasons you'd like to delete your profile,<br>
-please click the button bellow</h1>
-<br>
-<br>
+<h1 class="deleteProfileTag">We respect your privacy.<br> If you no longer wish to keep your profile, delete it using the button bellow. </h1>
 <br>
 
 <form method="post">
     <input type="hidden" name="_csrf" value="{{csrfToken}}">
     <a href="/delete/profile">
-   <input type="button" value="Delete Profile" />
+   <button type="submit" name="button">Delete Profile</button>
 </a>
 </form>
+</center>

@@ -13,6 +13,26 @@ exports.getEmail = email => {
     );
 };
 
+exports.getCitySigners = city => {
+    return db.query(
+        `SELECT first, last, age, city, url
+        FROM signatures
+        LEFT JOIN user_profiles
+        ON signatures.user_id = user_profiles.user_id
+        WHERE LOWER(city) = LOWER($1)`,
+        [city || null]
+    );
+};
+
+exports.getSigners = () => {
+    return db.query(
+        `SELECT first, last, age, city, url
+        FROM signatures
+        LEFT JOIN user_profiles
+        ON signatures.user_id = user_profiles.user_id`
+    );
+};
+
 exports.createUsers = (first, last, email, pass) => {
     return db.query(
         `INSERT INTO users (first, last, email, pass)
@@ -36,12 +56,12 @@ exports.updateUsersNoPass = (first, last, email, user_id) => {
     );
 };
 
-exports.deleteSig = sig => {
-    return db.query(`DELETE sig FROM signatures WHERE id = $1`[user_id]);
+exports.deleteSig = user_id => {
+    return db.query(`DELETE FROM signatures WHERE id = $1`, [user_id]);
 };
 
-exports.deleteProfile = user_id => {
-    return db.query(`DELETE user_id FROM signatures`);
+exports.deleteProfile = () => {
+    return db.query(`DELETE FROM user_profiles WHERE id = $1`);
 };
 
 exports.upsertUser_profiles = (age, city, url) => {
@@ -60,13 +80,6 @@ exports.createSignatures = (first, last, sig, user_id) => {
             VALUES ($1, $2, $3, $4)
             RETURNING id`,
         [first, last, sig, user_id]
-    );
-};
-
-exports.getSigners = () => {
-    return db.query(
-        `SELECT first, last, age, city, url FROM signatures
-        LEFT JOIN user_profiles ON signatures.user_id = user_profiles.user_id`
     );
 };
 

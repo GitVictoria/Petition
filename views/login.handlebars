@@ -1,12 +1,32 @@
-<h1>Please Log In To Continue</h1>
 
+
+<center>
+    <h1>Please Log In To Continue</h1>
 <form method="post">
-    Email : <input type="text" name="email" placeholder="Email Address">
-    Password : <input type="password" name="pass" placeholder="Password">
-    <input type="hidden" name="_csrf" value="{{csrfToken}}">
-    <button type="submit" name="button">Submit</button>
+    <div class="loginTabs">
+        <input type="text" name="email" placeholder="Email Address">
+
+    </div>
+    <div class="loginTabs">
+        <input type="password" name="pass" placeholder="Password">
+
+    </div>
+    <div>
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+    </div>
+    <div class="loginTabs">
+        <button type="submit" name="button">Submit</button>
+
+    </div>
 </form>
 
 {{#if error}}
 <p class="error">Your email or password are incorrect, please try again</p>
 {{/if}}
+
+</center>
+<script src="/script.js" type="text/javascript">
+
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

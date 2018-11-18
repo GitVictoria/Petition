@@ -1,13 +1,30 @@
+<center>
 <h1>You can update your info here</h1>
 
 <form  method="post">
-    First Name: <input type="text" name="first" placeholder="First Name">
-    Second Name: <input type="text" name="last" placeholder="Second Name">
-    Email: <input type="text" name="email" placeholder="Email">
-    Password: <input type="password" name="pass" placeholder="Password">
-    Age: <input type="text" name="age" placeholder="Age">
-    City: <input type="text" name="city" placeholder="City">
-    Homepage: <input type="text" name="url" placeholder="Homepage">
-    <input type="hidden" name="_csrf" value="{{csrfToken}}">
-    <button type="submit" name="edit">Update Profile</button>
+    <div class="editTabs">
+        <input type="text" name="first" placeholder="First Name">
+    </div>
+    <div class="editTabs" >
+        <input type="text" name="last" placeholder="Second Name">
+    </div>
+    <div class="editTabs">
+        <input type="text" name="email" placeholder="Email">
+    </div>
+    <div class="editTabs">
+        <input type="password" name="pass" placeholder="Password">
+    </div>
+     <div class="editTabs">
+         <input type="text" name="age" placeholder="Age">
+        </div>
+        <div class="editTabs">
+            <input type="text" name="city" placeholder="City">
+        </div>
+        <div class="editTabs">
+            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        </div>
+        <div class="editTabs">
+            <button type="submit" name="edit">Update Profile</button>
+        </div>
 </form>
+</center>

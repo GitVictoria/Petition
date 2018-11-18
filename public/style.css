@@ -9,7 +9,7 @@ button {
     width: 250px;
     margin-top: 40px;
     height: 30px;
-    border: 2px solid red;
+    border: 2px solid black;
     font-size: 15px;
     background: none;
 }
@@ -19,13 +19,77 @@ input {
 }
 
 * {
-    font-family: "Josefin Sans", sans-serif;
+    /* font-family: "Josefin Sans", sans-serif; */
+    font-family: "Playfair Display", serif;
+    letter-spacing: 2px;
+}
+
+.line-in-middle {
+    width: 400px;
+    height: 200px;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        transparent calc(50% - 0.81px),
+        black calc(50% - 0.8px),
+        black calc(50% + 0.8px),
+        transparent calc(50% + 0.81px),
+        transparent 100%
+    );
+}
+
+.deleteProfileTag {
+    font-size: 20px;
+}
+
+h2.shameTag {
+    font-weight: bold;
+}
+
+.thanksSig {
+    border: 1px dashed black;
+}
+
+hr {
+    border: solid black;
+}
+
+.loginTabs {
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.profileTabs {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.editTabs {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.thanksButtons {
+    /* background-color: #dcdcd7; */
+    height: 50px;
+    width: 100%;
+    border: 1px dashed black;
+}
+
+.topBanner {
+    color: black;
+    border: 1px solid black;
+    background-color: #efeeeb;
 }
 
 .typeform {
     float: right;
     padding-right: 100px;
     padding-top: 200px;
+}
+
+.typeform1 {
+    font-size: 20px;
 }
 
 ::placeholder {
@@ -110,7 +174,25 @@ placeholder {
     width: 100%;
     height: 100%;
     z-index: 99;
-    background-image: url("backdrop.png");
+    background-image: url("peltsQ.jpg");
     background-size: cover;
-    opacity: 0.7;
+    opacity: 0.9;
+}
+
+.leoImg {
+    width: 600px;
+    height: 100%;
+    border-radius: 45%;
+    z-index: 1;
+}
+
+.typeform {
+    font-size: 30px;
+    width: 600px;
+    z-index: 100;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-20%, -70%);
 }
